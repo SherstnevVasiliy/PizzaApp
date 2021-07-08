@@ -2,9 +2,9 @@ import React, {useCallback, useState} from 'react';
 import {
     TouchableOpacity, View, Text, StyleSheet,
 } from 'react-native';
-import {CounterProps} from '../../models/CounterModels';
-import AddIcon from '../../assets/SVGComponents/AddIcon';
-import RemoveIcon from '../../assets/SVGComponents/RemoveIcon';
+import {CounterProps} from '../../../models/CounterModels';
+import AddIcon from '../../../assets/SVGComponents/AddIcon';
+import RemoveIcon from '../../../assets/SVGComponents/RemoveIcon';
 
 const Counter = ({clickHandler}: CounterProps) => {
     const [currentCount, setCurrentCount] = useState(0);

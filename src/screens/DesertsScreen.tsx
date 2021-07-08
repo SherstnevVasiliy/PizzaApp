@@ -2,11 +2,11 @@ import React, {useCallback, useState} from 'react';
 import {
     Alert, StyleSheet, Text, TouchableOpacity, View,
 } from 'react-native';
-import {DesertModel} from '../models/DessertsListModels';
+import {DessertModel} from '../models/DessertsListModels';
 import Header from '../components/Header/Header';
 import DessertsList from '../components/DessertsList/DessertsList';
 
-const DESERTS_DATA: DesertModel[] = [
+const DESERTS_DATA: DessertModel[] = [
     {
         id: '1',
         title: 'Смородиновый молочный коктейль',

@@ -3,7 +3,7 @@ import {
     Image, StyleSheet, Text, View,
 } from 'react-native';
 import {PizzaProps} from '../../../models/PizzaListModels';
-import Counter from '../../Counter/Counter';
+import Counter from '../Counter/Counter';
 
 const Item = ({
     item,

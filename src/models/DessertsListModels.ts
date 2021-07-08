@@ -1,6 +1,6 @@
 import {PizzaModel} from "./PizzaListModels";
 
-export interface DesertModel {
+export interface DessertModel {
     readonly id: string;
     readonly title: string;
     readonly price: string;
@@ -10,11 +10,11 @@ export interface DesertModel {
 }
 
 export interface DesertProps {
-    readonly item: DesertModel;
+    readonly item: DessertModel;
     readonly clickHandler?: (title: string, count: number) => void;
 }
 
 export interface DesertsListProps {
-    readonly dessertsList: DesertModel[];
+    readonly dessertsList: DessertModel[];
     readonly clickHandler?: (title: string, count: number) => void;
 };

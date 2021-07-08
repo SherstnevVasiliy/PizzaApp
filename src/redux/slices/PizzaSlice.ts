@@ -1,15 +1,7 @@
-import React, {useCallback, useState} from 'react';
-import {
-    Alert, StyleSheet, Text, TouchableOpacity, View,
-} from 'react-native';
-import {useNavigation} from '@react-navigation/core';
-import {useSelector} from 'react-redux';
-import Header from '../components/Header/Header';
-import PizzaList from '../components/PizzaList/PizzaList';
-import {PizzaModel} from '../models/PizzaListModels';
-import {screens} from '../navigator/consts/screens';
-import {getPizzaList} from '../redux/selectors/pizzaListSelectors';
-import {ProductsType} from '../models/slices/cartSliceModels';
+import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {PizzaModel} from '../../models/PizzaListModels';
+import {PizzaListSliceModels} from '../../models/slices/pizzaListSliceModels';
+
 
 const PIZZA_DATA: PizzaModel[] = [
     {
@@ -52,55 +44,15 @@ const PIZZA_DATA: PizzaModel[] = [
     },
 ];
 
-const PizzaScreen = () => {
-    const navigation = useNavigation();
-    // @ts-ignore
-    const pizzaList: ProductsType[] = useSelector(getPizzaList);
-    const [cart, setCart] = useState({});
-    const onPress = useCallback(() => {
-        Alert.alert('Заказ', `Вы заказали ${JSON.stringify(cart)}`);
-        navigation.navigate(screens.DESSERTS);
-    }, [cart, navigation]);
-    const clickHandler = useCallback((title, count) => {
-        setCart({
-            ...cart,
-            [title]: count,
-        });
-    }, [cart, setCart]);
-
-    return (
-        <View style={styles.wrapper}>
-            <Header title="Pizza App" isVisibleBackButton={false}/>
-            <PizzaList pizzaList={pizzaList} clickHandler={clickHandler}/>
-            <TouchableOpacity style={styles.orderButtonWrapper} onPress={onPress}>
-                <Text style={styles.orderButtonText}>
-                    Заказать
-                </Text>
-            </TouchableOpacity>
-        </View>
-    );
+const initialState: PizzaListSliceModels = {
+    list: PIZZA_DATA,
 };
 
-const styles = StyleSheet.create({
-    wrapper: {
-        flex: 1,
-        backgroundColor: '#FFF',
-    },
-    orderButtonWrapper: {
-        display: 'flex',
-        alignSelf: 'center',
-        justifyContent: 'center',
-        backgroundColor: 'orange',
-        borderRadius: 4,
-        height: 40,
-        width: '100%',
-    },
-    orderButtonText: {
-        fontSize: 16,
-        fontWeight: '400',
-        textAlign: 'center',
-        color: '#FFF',
+const pizzaListSlice = createSlice({
+    name: 'pizzaList',
+    initialState,
+    reducers: {
     },
 });
 
-export default React.memo(PizzaScreen);
+export default pizzaListSlice.reducer;
