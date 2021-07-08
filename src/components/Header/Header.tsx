@@ -11,15 +11,21 @@ const Header = ({title, isVisibleBackButton = true}: HeaderProps) => {
     const navigate = useNavigation();
     return (
         <View style={styles.headerContainer}>
-            {isVisibleBackButton && (
-                <TouchableOpacity onPress={() => navigate.goBack()}>
-                    <BackIcon color="orange"/>
+            <View>
+                {isVisibleBackButton && (
+                    <TouchableOpacity onPress={() => navigate.goBack()}>
+                        <BackIcon color="orange"/>
+                    </TouchableOpacity>
+                )}
+            </View>
+            <View>
+                <Text style={styles.title}>{title}</Text>
+            </View>
+            <View>
+                <TouchableOpacity>
+                    <CartIcon color="orange"/>
                 </TouchableOpacity>
-            )}
-            <Text style={styles.title}>{title}</Text>
-            <TouchableOpacity>
-                <CartIcon color="orange"/>
-            </TouchableOpacity>
+            </View>
         </View>
     );
 };
