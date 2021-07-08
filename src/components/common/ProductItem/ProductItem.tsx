@@ -2,13 +2,13 @@ import React, {useCallback} from 'react';
 import {
     Image, StyleSheet, Text, View,
 } from 'react-native';
-import {PizzaProps} from '../../../models/PizzaListModels';
-import Counter from '../../Counter/Counter';
+import Counter from '../Counter/Counter';
+import {ProductItemProps} from '../../../models/ProductItemModels';
 
-const Pizza = ({
+const ProductItem = ({
     item,
     clickHandler,
-}: PizzaProps) => {
+}: ProductItemProps) => {
     const {
         title, price, img, description,
     } = item || {};
@@ -69,4 +69,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default React.memo(Pizza);
+export default React.memo(ProductItem);

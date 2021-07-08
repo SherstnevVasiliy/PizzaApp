@@ -1,9 +1,10 @@
 import React, {useCallback} from 'react';
 import {FlatList, ListRenderItemInfo} from 'react-native';
-import {PizzaListProps, PizzaModel} from '../../models/PizzaListModels';
+import {PizzaModel} from '../../models/PizzaListModels';
 import ProductItem from '../common/ProductItem/ProductItem';
+import {DessertsListProps} from '../../models/DessertsListModels';
 
-const PizzaList = ({pizzaList, clickHandler}: PizzaListProps) => {
+const DessertList = ({dessertsList, clickHandler}: DessertsListProps) => {
     const renderItem = useCallback((item: ListRenderItemInfo<PizzaModel>) => (
         <ProductItem
             item={item.item}
@@ -11,13 +12,13 @@ const PizzaList = ({pizzaList, clickHandler}: PizzaListProps) => {
         />
     ), [clickHandler]);
 
-    if (!pizzaList || !pizzaList.length) {
+    if (!dessertsList || !dessertsList.length) {
         return null;
     }
 
     return (
-        <FlatList data={pizzaList} renderItem={renderItem} />
+        <FlatList data={dessertsList} renderItem={renderItem} />
     );
 };
 
-export default PizzaList;
+export default DessertList;
