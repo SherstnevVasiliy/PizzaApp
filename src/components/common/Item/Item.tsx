@@ -5,7 +5,7 @@ import {
 import {PizzaProps} from '../../../models/PizzaListModels';
 import Counter from '../../Counter/Counter';
 
-const Pizza = ({
+const Item = ({
     item,
     clickHandler,
 }: PizzaProps) => {
@@ -69,4 +69,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default React.memo(Pizza);
+export default React.memo(Item);
