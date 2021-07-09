@@ -4,15 +4,9 @@ export interface PizzaModel {
     readonly price: string;
     readonly description: string;
     readonly img: string;
-
-}
-
-export interface PizzaProps {
-    readonly item: PizzaModel;
-    readonly clickHandler?: (title: string, count: number) => void;
+    readonly category: string;
 }
 
 export interface PizzaListProps {
     readonly pizzaList: PizzaModel[];
-    readonly clickHandler?: (title: string, count: number) => void;
 };

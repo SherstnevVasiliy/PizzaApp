@@ -4,7 +4,9 @@ import {
     StyleSheet,
 } from 'react-native';
 import RNBootSplash from 'react-native-bootsplash';
+import {Provider} from 'react-redux';
 import {Navigator} from './src/navigator/Navigator';
+import {store} from './src/redux/store';
 
 
 const App = () => {
@@ -12,9 +14,11 @@ const App = () => {
         RNBootSplash.hide().then();
     }, []);
     return (
-        <SafeAreaView style={styles.appContainer}>
-            <Navigator />
-        </SafeAreaView>
+        <Provider store={store}>
+            <SafeAreaView style={styles.appContainer}>
+                <Navigator />
+            </SafeAreaView>
+        </Provider>
     );
 };
 

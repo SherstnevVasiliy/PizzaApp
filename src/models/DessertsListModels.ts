@@ -4,6 +4,7 @@ export interface DessertModel {
     readonly price: string;
     readonly description: string;
     readonly img: string;
+    readonly category: string;
 
 }
 

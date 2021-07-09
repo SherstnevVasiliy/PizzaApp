@@ -2,34 +2,35 @@ import React, {useCallback, useState} from 'react';
 import {
     TouchableOpacity, View, Text, StyleSheet,
 } from 'react-native';
-import {CounterProps} from '../../../models/CounterModels';
-import AddIcon from '../../../assets/images/AddIcon';
-import RemoveIcon from '../../../assets/images/RemoveIcon';
+import {useDispatch} from 'react-redux';
+import {CounterProps} from '../../models/CounterModels';
+import AddIcon from '../../assets/images/AddIcon';
+import RemoveIcon from '../../assets/images/RemoveIcon';
+import { addItem } from '../../redux/slices/cartSlice';
 
-const Counter = ({clickHandler}: CounterProps) => {
+const Counter = ({item}: CounterProps) => {
+    const dispatch = useDispatch();
     const [currentCount, setCurrentCount] = useState(0);
-    const onIncrement = useCallback(() => {
+
+    const onPressAddItem = useCallback(() => {
         setCurrentCount(prevValue => prevValue + 1);
-        if (clickHandler) {
-            clickHandler(currentCount + 1);
-        }
-    }, [setCurrentCount, clickHandler, currentCount]);
-    const onDecrement = useCallback(() => {
+        dispatch(addItem(item));
+    }, [dispatch, setCurrentCount, item]);
+
+    const onPressRemoveItem = useCallback(() => {
         if (currentCount > 0) {
             setCurrentCount(prevValue => prevValue - 1);
-            if (clickHandler) {
-                clickHandler(currentCount - 1);
-            }
+            // dispatch(removeItem(item));
         }
-    }, [setCurrentCount, clickHandler, currentCount]);
+    }, [setCurrentCount, currentCount]);
 
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={onIncrement}>
+            <TouchableOpacity onPress={onPressAddItem}>
                 <AddIcon color="green"/>
             </TouchableOpacity>
             <Text style={styles.count}>{currentCount}</Text>
-            <TouchableOpacity onPress={onDecrement}>
+            <TouchableOpacity onPress={onPressRemoveItem}>
                 <RemoveIcon color="red"/>
             </TouchableOpacity>
         </View>

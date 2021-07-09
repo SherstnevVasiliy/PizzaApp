@@ -1,3 +1,5 @@
+import {ProductItemType} from './ProductItemModels';
+
 export interface CounterProps {
-    clickHandler: (currentCount: number) => void;
+    item: ProductItemType;
 }

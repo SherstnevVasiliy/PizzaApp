@@ -10,13 +10,20 @@ import DessertsTabIcon from '../../assets/images/DessertsTabIcon';
 const Tab = createBottomTabNavigator();
 
 export const Tabs = () => (
-    <Tab.Navigator initialRouteName={Navigator.initialRoute}>
+    <Tab.Navigator
+        tabBarOptions={{
+            style: {
+                paddingTop: 24,
+            },
+        }}
+        initialRouteName={Navigator.initialRoute}
+    >
         <Tab.Screen
             name={screens.PIZZA}
             component={PizzaScreen}
             /* eslint-disable-next-line react/jsx-no-bind */
             options={() => ({
-                tabBarLabel: 'Пиццы',
+                tabBarLabel: '',
                 tabBarIcon:
                     ({focused}) => (focused ? (<PizzaTabIcon color="orange"/>) : (<PizzaTabIcon color="grey"/>)),
             })}
@@ -27,7 +34,7 @@ export const Tabs = () => (
             component={DessertsScreen}
             /* eslint-disable-next-line react/jsx-no-bind */
             options={() => ({
-                tabBarLabel: 'Десерты',
+                tabBarLabel: '',
                 tabBarIcon:
                     ({focused}) => (focused ? (<DessertsTabIcon color="orange"/>) : (<DessertsTabIcon color="grey"/>)),
             })}

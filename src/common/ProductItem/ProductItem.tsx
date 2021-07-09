@@ -1,28 +1,23 @@
-import React, {useCallback} from 'react';
+import React from 'react';
 import {
     Image, StyleSheet, Text, View,
 } from 'react-native';
 import Counter from '../Counter/Counter';
-import {ProductItemProps} from '../../../models/ProductItemModels';
+import {ProductItemProps} from '../../models/ProductItemModels';
 
 const ProductItem = ({
     item,
-    clickHandler,
 }: ProductItemProps) => {
     const {
         title, price, img, description,
     } = item || {};
-    const changeHandler = useCallback((count: number) => {
-        if (clickHandler) {
-            clickHandler(title, count);
-        }
-    }, [clickHandler, title]);
+
     return (
         <View style={styles.pizzaWrapper}>
             <View style={styles.priceContainer}>
                 <Text style={styles.price}>{price}</Text>
                 <Image source={{uri: img}} style={styles.img}/>
-                <Counter clickHandler={changeHandler}/>
+                <Counter item={item}/>
             </View>
             <View style={styles.descriptionContainer}>
                 <Text style={styles.title}>{title}</Text>
