@@ -4,8 +4,9 @@ import Navigator from '../../base/Navigation';
 import {screens} from '../const/screens';
 import PizzaScreen from '../../screens/PizzaScreen';
 import DessertsScreen from '../../screens/DessertsScreen';
-import PizzaTabIcon from '../../assets/images/PizzaTabIcon';
-import DessertsTabIcon from '../../assets/images/DessertsTabIcon';
+import PizzaTabIcon from '../../assets/icons/PizzaTabIcon';
+import DessertsTabIcon from '../../assets/icons/DessertsTabIcon';
+import CartDetailsScreen from "../../screens/CartDetailsScreen";
 
 const Tab = createBottomTabNavigator();
 

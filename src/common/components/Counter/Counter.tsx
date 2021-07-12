@@ -3,10 +3,10 @@ import {
     TouchableOpacity, View, Text, StyleSheet,
 } from 'react-native';
 import {useDispatch} from 'react-redux';
-import {CounterProps} from '../../models/CounterModels';
-import AddIcon from '../../assets/images/AddIcon';
-import RemoveIcon from '../../assets/images/RemoveIcon';
-import { addItem } from '../../redux/slices/cartSlice';
+import {CounterProps} from '../../../models/CounterModels';
+import AddIcon from '../../../assets/icons/AddIcon';
+import RemoveIcon from '../../../assets/icons/RemoveIcon';
+import { addItem } from '../../../redux/slices/cartSlice';
 
 const Counter = ({item}: CounterProps) => {
     const dispatch = useDispatch();

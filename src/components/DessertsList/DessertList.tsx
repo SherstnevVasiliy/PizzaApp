@@ -1,7 +1,7 @@
 import React, {useCallback} from 'react';
 import {FlatList, ListRenderItemInfo} from 'react-native';
 import {PizzaModel} from '../../models/PizzaListModels';
-import ProductItem from '../../common/ProductItem/ProductItem';
+import ProductItem from '../../common/components/ProductItem/ProductItem';
 import {DessertsListProps} from '../../models/DessertsListModels';
 
 const DessertList = ({dessertsList}: DessertsListProps) => {
@@ -16,7 +16,7 @@ const DessertList = ({dessertsList}: DessertsListProps) => {
     }
 
     return (
-        <FlatList data={dessertsList} renderItem={renderItem} />
+        <FlatList showsVerticalScrollIndicator={false} data={dessertsList} renderItem={renderItem} />
     );
 };
 

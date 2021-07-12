@@ -1,7 +1,7 @@
 import React, {useCallback} from 'react';
 import {FlatList, ListRenderItemInfo} from 'react-native';
 import {PizzaListProps, PizzaModel} from '../../models/PizzaListModels';
-import ProductItem from '../../common/ProductItem/ProductItem';
+import ProductItem from '../../common/components/ProductItem/ProductItem';
 
 const PizzaList = ({pizzaList}: PizzaListProps) => {
     const renderItem = useCallback((item: ListRenderItemInfo<PizzaModel>) => (
@@ -15,7 +15,7 @@ const PizzaList = ({pizzaList}: PizzaListProps) => {
     }
 
     return (
-        <FlatList data={pizzaList} renderItem={renderItem} />
+        <FlatList showsVerticalScrollIndicator={false} data={pizzaList} renderItem={renderItem} />
     );
 };
 

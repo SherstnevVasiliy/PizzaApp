@@ -3,7 +3,7 @@ import {
     Image, StyleSheet, Text, View,
 } from 'react-native';
 import Counter from '../Counter/Counter';
-import {ProductItemProps} from '../../models/ProductItemModels';
+import {ProductItemProps} from '../../../models/ProductItemModels';
 
 const ProductItem = ({
     item,
@@ -39,9 +39,7 @@ const styles = StyleSheet.create({
     },
     descriptionContainer: {
         display: 'flex',
-        justifyContent: 'center',
         alignItems: 'center',
-        paddingHorizontal: 16,
         paddingBottom: 16,
     },
     img: {

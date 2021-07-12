@@ -1,3 +1,4 @@
 export interface HeaderProps {
-    readonly title: string;
+    title: string;
+    isVisibleBackButton?: boolean;
 }
