@@ -1,6 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {PizzaModel} from '../../models/PizzaListModels';
 
+
 export const PIZZA_DATA: PizzaModel[] = [
     {
         id: '1',

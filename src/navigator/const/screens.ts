@@ -5,4 +5,5 @@ export const screens: ScreenModel = {
     PIZZA: 'PIZZA',
     DESSERTS: 'DESSERTS',
     CART_DETAILS: 'CART_DETAILS',
+    MAP_SCREEN: 'MAP_SCREEN',
 };

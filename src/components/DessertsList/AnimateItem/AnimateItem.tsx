@@ -26,6 +26,8 @@ const AnimateItem = ({item}: AnimateItemProps) => {
                 justifyContent: 'center',
                 backgroundColor,
                 alignItems: 'center',
+                borderRadius: 4,
+                marginBottom: 6,
             }}
             >
                 <Text style={styles.titleItem}>{title}</Text>

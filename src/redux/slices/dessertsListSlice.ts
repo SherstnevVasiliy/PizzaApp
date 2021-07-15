@@ -3,7 +3,7 @@ import {DessertModel} from '../../models/DessertsListModels';
 
 export const DESERTS_DATA: DessertModel[] = [
     {
-        id: '1',
+        id: '6',
         title: 'Смородиновый молочный коктейль',
         description: 'Напиток на основе молока и пломбира с замороженными ягодами черной смородины',
         price: '159 ₽',
@@ -11,7 +11,7 @@ export const DESERTS_DATA: DessertModel[] = [
         category: 'desserts',
     },
     {
-        id: '2',
+        id: '7',
         title: 'Молочный коктейль с печеньем Орео',
         description: 'КНапиток из молока и мороженого с добавлением дробленого печенья «Орео»',
         price: '179 ₽',
@@ -19,7 +19,7 @@ export const DESERTS_DATA: DessertModel[] = [
         category: 'desserts',
     },
     {
-        id: '3',
+        id: '8',
         title: 'Классический молочный коктейль',
         description: 'Напиток из молока и мороженого',
         price: '159 ₽',
@@ -27,7 +27,7 @@ export const DESERTS_DATA: DessertModel[] = [
         category: 'desserts',
     },
     {
-        id: '4',
+        id: '9',
         title: 'Клубничный молочный коктейль',
         description: 'Напиток из молока и мороженого с клубничным сиропом',
         price: '159 ₽',
@@ -35,7 +35,7 @@ export const DESERTS_DATA: DessertModel[] = [
         category: 'desserts',
     },
     {
-        id: '5',
+        id: '10',
         title: 'Айс Капучино',
         description: 'Бодрящий напиток из мороженого, двойного эспрессо, с шоколадным сиропом',
         price: '159 ₽',
